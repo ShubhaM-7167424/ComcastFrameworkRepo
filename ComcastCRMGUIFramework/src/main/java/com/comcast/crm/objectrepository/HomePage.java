@@ -15,6 +15,8 @@ public class HomePage extends WebDriverUtility {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+	@FindBy (linkText = "Products")
+	private WebElement productsLink;
 
 	@FindBy (linkText = "Organizations")
 	private WebElement orgLink;
@@ -58,6 +60,10 @@ public class HomePage extends WebDriverUtility {
 		return signOutLink;
 	}
 	
+	public WebElement getProductsLink() {
+		return productsLink;
+	}
+
 	public void goToCampaignsPage() {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(moreLink).perform();
